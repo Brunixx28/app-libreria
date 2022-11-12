@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from libreria.views import index
+from libreria.views import index, numero_lista
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("saludo/", index),
+    path("lista/", numero_lista)
 ]
