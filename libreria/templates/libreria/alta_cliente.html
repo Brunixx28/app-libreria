@@ -1,0 +1,13 @@
+{% extends 'libreria/base.html' %}
+{% block titulo%} Buscar cliente por su nombre {% endblock %}
+{% block contenido %}
+  
+  <form action="/mi-cliente/alta" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2 style="color:blueviolet">{{msg_exito}}</h2>
+  
+{% endblock %}

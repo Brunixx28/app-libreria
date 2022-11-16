@@ -1,6 +1,13 @@
 {% extends 'libreria/base.html' %}
-{% block titulo%} Lista de todos mis clientes {% endblock %}
+{% block titulo%} Buscar cliente por nombre {% endblock %}
 {% block contenido %}
+  
+  <form action="/mi-cliente/buscar" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+  </form>
+
   {% for cliente in lista_clientes %}
       <ul>
           <li> Nombre: {{cliente.nombre}}, Dirección: {{cliente.direccion}}, numero_dni: {{cliente.numero_dni}}</li>
