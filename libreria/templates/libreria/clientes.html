@@ -1,7 +1,7 @@
 {% extends 'libreria/base.html' %}
 {% block titulo%} Lista de todos mis clientes {% endblock %}
 {% block contenido %}
-  {% for cliente in lista_clientes %}
+  {% for clientes in lista_clientes %}
       <ul>
           <li> Nombre: {{cliente.nombre}}, Dirección: {{cliente.direccion}}, numero_dni: {{cliente.numero_dni}}</li>
       </ul>

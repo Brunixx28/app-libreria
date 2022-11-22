@@ -2,6 +2,7 @@ from django.shortcuts import render
 from libreria.models import clientes
 from libreria.forms import Buscar, libreriaForm
 from django.views import View
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
 def index(request):
     return render(request, "libreria/saludar.html")
@@ -56,9 +57,22 @@ class AltaCliente(View):
                                                         'msg_exito': msg_exito})
         
         return render(request, self.template_name, {"form": form})
-    
-    
-     
+        
             
+class ClientesList(ListView):
+    model = clientes
 
+class ClientesCrear(CreateView):
+    model = clientes
+    success_url = "/panel-cliente"
+    fields = ["nombre", "direccion", "numero_dni"]
+
+class ClientesBorrar(DeleteView):
+    model = clientes
+    success_url = "/panel-cliente"
+
+class ClientesActualizar(UpdateView):
+    model = clientes
+    success_url = "/panel-cliente"
+    fields = ["nombre", "direccion"]
    
