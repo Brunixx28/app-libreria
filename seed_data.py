@@ -8,3 +8,10 @@ clientes(nombre="Elias", direccion="Neuquen 09", numero_dni=338521).save()
 
 
 print("se cargo con exito")
+
+from blog.models import Post
+
+Post(title="Mi post", short_content="un post", content="si todo sale bien este mensaje les va a salir a todos, Vanesa volveee").save()
+
+
+print("Se cargo con exito en la libreria")

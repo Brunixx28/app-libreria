@@ -32,8 +32,8 @@
         <header class="py-5 bg-light border-bottom mb-4">
             <div class="container">
                 <div class="text-center my-5">
-                    <h1 class="fw-bolder">{{configuracion.titulo_principal}}</h1>
-                    <p class="lead mb-0">{{configuracion.subtitulo_principal}}</p>
+                    <h1 class="fw-bolder">La libreria del pueblo</h1>
+                    <p class="lead mb-0">En esta libreria va a encontrar lo que estas buscando</p>
                 </div>
             </div>
         </header>
@@ -47,8 +47,8 @@
                         <a href="#!"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">January 1, 2022</div>
-                            <h2 class="card-title">Featured Post Title</h2>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+                            <h2 class="card-title">Casa La Primera te ofrece todo</h2>
+                            <p class="card-text">Estamos hace mas de 20 años ofreciendo el mejor sevicio a las personas</p>
                             <a class="btn btn-primary" href="#!">Read more →</a>
                         </div>
                     </div>
@@ -60,8 +60,8 @@
                                 <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">January 1, 2022</div>
-                                    <h2 class="card-title h4">Post Title</h2>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                                    <h2 class="card-title h4">Post boligrafos</h2>
+                                    <p class="card-text">todo tipo de libros, boligrafos, temperas y muchas cosas mas </p>
                                     <a class="btn btn-primary" href="#!">Read more →</a>
                                 </div>
                             </div>
@@ -70,8 +70,8 @@
                                 <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">January 1, 2022</div>
-                                    <h2 class="card-title h4">Post Title</h2>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                                    <h2 class="card-title h4">Post Libros</h2>
+                                    <p class="card-text">Libros de su preferencia y para toda clase de edades, historietas y mucho mas</p>
                                     <a class="btn btn-primary" href="#!">Read more →</a>
                                 </div>
                             </div>
@@ -82,8 +82,8 @@
                                 <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">January 1, 2022</div>
-                                    <h2 class="card-title h4">Post Title</h2>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                                    <h2 class="card-title h4">Post Cuadernos</h2>
+                                    <p class="card-text">Ofrecemos cuadernos para grandes y chicos ideal para el colegio</p>
                                     <a class="btn btn-primary" href="#!">Read more →</a>
                                 </div>
                             </div>
@@ -92,8 +92,8 @@
                                 <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">January 1, 2022</div>
-                                    <h2 class="card-title h4">Post Title</h2>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
+                                    <h2 class="card-title h4">Post Artistica</h2>
+                                    <p class="card-text">Los mejores acrilicos y temperas para tus clases</p>
                                     <a class="btn btn-primary" href="#!">Read more →</a>
                                 </div>
                             </div>
@@ -123,6 +123,11 @@
                                 <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
                                 <button class="btn btn-primary" id="button-search" type="button">Go!</button>
                             </div>
+                            <form action="{% url 'search-by-name-post' %}" method="get">
+                                {% csrf_token %}
+                                <input type="search" name="post-title">
+                                <input type="submit" value="go">
+                           </form>
                         </div>
                     </div>
                     <!-- Categories widget-->

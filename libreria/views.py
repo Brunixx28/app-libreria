@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from libreria.models import clientes
 from libreria.forms import Buscar, libreriaForm
 from django.views import View
@@ -74,5 +75,6 @@ class ClientesBorrar(DeleteView):
 class ClientesActualizar(UpdateView):
     model = clientes
     success_url = "/panel-cliente"
+    success_url = reverse_lazy("cliente")
     fields = ["nombre", "direccion"]
    
